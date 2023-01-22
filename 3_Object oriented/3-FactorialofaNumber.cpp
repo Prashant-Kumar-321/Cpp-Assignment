@@ -1,7 +1,13 @@
+// Question
+/*
+De   fine class Factorial and define and instance member function to find the factorial of
+a number using class.
+*/
 #include<iostream>
 #include<conio.h>
 
 using namespace std;
+
 class Factorial
 {
 public:
@@ -17,7 +23,8 @@ public:
   {
    if(b == 1 || b== 0)
     return 1;
-  else if (b < 0)
+
+   else if (b < 0)
     return 0;
 
    return b * fact(b-1);
@@ -38,6 +45,8 @@ public:
 int main()
 {
   int num = 10;
+  cout<< "Enter a Number : ";
+  cin>> num;
 
   Factorial f2;
   cout<< "factorial = "<< f2.fact(num)<< endl;

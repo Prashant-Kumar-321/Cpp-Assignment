@@ -1,34 +1,32 @@
+// question
+/*
+Define a class Time to represent Time (like 3hr 45min 20sec). Declare appropriate
+number of instance member variables and also define instance member functions to
+set values for time and display values of time
+*/
  #include<iostream>
  #include<conio.h>
-
  using namespace std;
 
  class Time
  {
    int h,m,s; // private instance member variables
 
- public:
-  Time(int H = 0, int M = 0, int S= 0)
-  {
-    h = H;
-    m = M;
-    s = S;
-  }
+  public:
+   Time(int H = 0, int M = 0, int S= 0)
+   {
+     h = H;
+     m = M;
+     s = S;
+   }
 
   ///////////////////////// Instance member functions
   void setTime()
   {
-    cout<< "Enter Time "<< endl;
-    cout<< "Hour: ";
-    cin>> h;
-
-    cout<< "Minute: ";
-    cin>> m;
-
-    cout<< "second ";
-    cin>> s;
+    char ch;
+    cin>> h>> ch>> m>> ch>> s; // to take input in HH:MM:SS formate ;
   }
-  // setter time
+  // setter function of individual part of time
   void setM(int a)
   {
     if(a<0)
@@ -61,13 +59,12 @@
 
   void getTime()
   {
-    cout<< "\nTime ::\n";
-    cout<<h << " hr "<< m << " min "<< s << " sec "<< endl;
+    cout<< h<< "::"<<m<< "::"<< s<< endl;
   }
 
  };
 
- void TimeInput(Time&x) // for an object of Time class
+ void TimeInput(Time &x) // for an object of Time class
  {
    int temp;
    cout<< "Enter Time : \n";
@@ -104,9 +101,9 @@
    cin>> temp;
    t1.setS(temp);
   */
-
    // taking input form user
-    TimeInput(t1);
-
+   cout<< "Enter Time in HH:MM:SS formate * ! \n";
+   TimeInput(t1);
+    t1.setTime();
     t1.getTime();
  }
