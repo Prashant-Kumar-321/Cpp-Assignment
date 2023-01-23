@@ -33,8 +33,6 @@ public:
     return Num;
   }
 
-
-
 };
   // Definition of friend function
   istream& operator>> (istream &is, ReversNum &num)
