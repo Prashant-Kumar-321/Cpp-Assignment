@@ -55,7 +55,7 @@ public:
 
 int main()
 {
-  system("color 67");
+  system("color 17");
   Area a;
   //cout<<"Size of object a having no member variable is "<< sizeof(a)<< endl ;
   int option;

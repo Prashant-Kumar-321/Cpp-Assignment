@@ -7,9 +7,9 @@ int main()
   // math method
   //modf( )
 
-  double x = -12.34, fractionalPart;
+  double x = 14.35, fractionalPart;
   double intpart;
-  x = 8.7865;
+  x = 8.548;
   fractionalPart = modf(x,&intpart);
 
   cout<< "Fraction part of "<< x << " is "<< fractionalPart<< endl;
