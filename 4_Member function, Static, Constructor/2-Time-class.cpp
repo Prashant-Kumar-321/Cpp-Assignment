@@ -7,7 +7,7 @@ class Time
   int hour, minute, second;
 
 public:
-  Time(int h,int m, int s)
+  Time(int h,int m, int s) // normalization has been done with constructor and setTime function
   {
     // hour initialization
     if(h<0) hour = 0;
@@ -51,7 +51,7 @@ public:
 
 };
 
-void Time::setTime(int h, int m, int s)
+void Time::setTime(int h, int m, int s)// normalization has been done with setTime function
 {
     // hour initialization
     if(h<0) hour = 0;
@@ -155,10 +155,6 @@ int main()
   t3 = t2.sub(t1); // ft2 - t2
   cout<< endl<< "t2 - t1 = ";
   t3.showTime(); cout<<endl;
-
-
-
-
 
   return 0;
 }
