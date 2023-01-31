@@ -6,6 +6,7 @@ using namespace std;
 class Rectangle
 {
     float length, width;
+    float Area, perimeter, diagonal; 
 
 public:
     // Constructor
@@ -14,24 +15,29 @@ public:
     {
         length = l;
         width = w;
+
+        Area = l*w; 
+        perimeter = 2 * ( l+w );
+        diagonal = sqrt(length*length + width+width);  
     }
 
     // friend operator overloaded function
     friend istream& operator>> (istream&, Rectangle&);
 
     // Member function definition
-    float Area()
-    {
-        return (length*width);
-    }
-    float Perimeter()
-    {
-        return 2*(length + width);
-    }
-    float diagonal()
-    {
-        return sqrt(length*length + width*width);
-    }
+    /*** they will be calculated  automatically at the  intialization or input time */
+    // float area()
+    // {
+    //     return (length*width);
+    // }
+    // float Perimeter()
+    // {
+    //     return 2*(length + width);
+    // }
+    // float diagonal()
+    // {
+    //     return sqrt(length*length + width*width);
+    // }
 
     // getter function of length and width
     float getLength()
@@ -41,6 +47,22 @@ public:
     float getWidth()
     {
         return width;
+    }
+
+    // getter function for each parameter 
+    // of rectangel object; 
+    float area()
+    {
+        return Area; 
+    }
+
+    float Permtr()
+    {
+        return perimeter; 
+    }
+    float Diag()
+    {
+        return diagonal; 
     }
 
     // Rectangle drawing fun
@@ -67,9 +89,16 @@ public:
 istream& operator>> (istream& is, Rectangle&r)
 {
     cin>>r.length>>r.width;
+
+    r.Area = r.length*r.width;
+    r.perimeter = 2*(r.length + r.width);
+    r.diagonal = sqrt(r.length*r.length+r.width+r.width);   
+
     return cin;
 }
 
+
+// Driver Code 
 int main()
 {
     Rectangle Rec1(4.5,3);
@@ -81,9 +110,9 @@ int main()
     Rec1.drawrect();
     cout<< "\n";
     cout<< "Length = "<< Rec1.getLength()<< " , Width = "<< Rec1.getWidth()<< endl;
-    cout<< "Area of Rectangle = "<< Rec1.Area()<< " square units \n"<< endl;
-    cout<< "Perimeter of Rectangle = "<< Rec1.Perimeter()<< " units\n"<< endl;
-    cout<< "Diagonal length of Rectangle = "<< Rec1.diagonal()<< " units \n"<<  endl;
+    cout<< "Area of Rectangle = "<<Rec1.area()<< " square units \n"<< endl;
+    cout<< "Perimeter of Rectangle = "<< Rec1.Permtr()<< " units\n"<< endl;
+    cout<< "Diagonal length of Rectangle = "<< Rec1.Diag()<< " units \n"<<  endl;
 
     Rectangle Rec2;
     cin>>Rec2;

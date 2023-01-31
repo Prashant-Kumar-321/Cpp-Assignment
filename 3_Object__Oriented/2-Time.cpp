@@ -15,9 +15,15 @@ set values for time and display values of time
   public:
    Time(int H = 0, int M = 0, int S= 0)
    {
-     h = H;
-     m = M;
-     s = S;
+     this->h = H;
+     this->m = M;
+     this->s = S;
+   }
+   Time()
+   {
+    h = 0; 
+    m = 0; 
+    s = 0; 
    }
 
   ///////////////////////// Instance member functions
@@ -105,5 +111,9 @@ set values for time and display values of time
    cout<< "Enter Time in HH:MM:SS formate * ! \n";
    TimeInput(t1);
     t1.setTime();
+
     t1.getTime();
+
+    getch(); 
+    return 0; 
  }

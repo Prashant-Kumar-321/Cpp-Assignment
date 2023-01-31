@@ -4,7 +4,8 @@ using namespace std;
 
 class ReversNum
 {
-  int Num;
+  int Num, rev;
+
 
 public:
   // constructor
@@ -17,20 +18,23 @@ public:
   // >> operator operloading to take direct input in my object;
   friend istream& operator>> (istream&, ReversNum&);
 
-  int revNum() // member function reversing the int number
+  void revNum() // member function reversing the int number
   {
     int tem = Num;
-    int ans = 0;
+    rev = 0;
 
     for(tem; tem!=0; tem /=10)
-      ans = ans *10 + tem%10;
-
-    return ans;
+      rev = rev *10 + tem%10;
   }
 
+ // Getter function of Number stored in object and and its reverse number ; 
   int getNum()
   {
     return Num;
+  }
+  int revNO()
+  {
+    return rev;
   }
 
 };
@@ -49,23 +53,8 @@ public:
     cout<< "Enter a Number : ";
     cin>> n1;
 
-    cout<< "Reverse Num of "<< n1.getNum()<< " = "<< n1.revNum() << endl;
+    n1.revNum(); 
+    cout<< "Reverse Num of "<< n1.getNum()<< " = "<< n1.revNO() << endl;
 
     return 0;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

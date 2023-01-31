@@ -5,6 +5,7 @@ using namespace std;
 class Largest__Number__
 {
  float n1,n2,n3; // private member variables
+ float max; 
 
  public:
   Largest__Number__(float n1,float n2, float n3)
@@ -26,10 +27,15 @@ class Largest__Number__
   // instance member function to get max of three number
   float getLargestNum()
   {
-    float max = (n1>n2) ? n1: n2; // first find max in n1 and n2
+     max = (n1>n2) ? n1: n2; // first find max in n1 and n2
      max = (max > n3) ? max : n3; // find max in n3 and max(n1,n2)
 
     return max;
+  }
+
+  float Max ()
+  {
+    return max; 
   }
 
 };
@@ -37,47 +43,14 @@ class Largest__Number__
 // driver code
 int main()
 {
-  Largest__Number__  num1;
+  Largest__Number__  num1(2,8,10);
 
   cout<< "Enter three numbers : \n";
   cin >> num1;
 
-  cout<< "Maximum = "<< num1.getLargestNum() << endl;
+  num1.getLargestNum(); 
+  cout<< "Maximum = "<< num1.Max()<< endl;
 
   getch();
   return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

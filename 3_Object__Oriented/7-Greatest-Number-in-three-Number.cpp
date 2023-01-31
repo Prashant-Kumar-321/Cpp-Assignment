@@ -6,6 +6,7 @@ using namespace std;
 class Greatest
 {
   float num[3];
+  float max; 
 
 public:
   // constructor
@@ -31,9 +32,9 @@ public:
     return cout;
   }
 
-  float Max() // member function finding max among three number
+  float MaxNum() // member function finding max among three number
   {
-    int max = (num[0]>num[1])? num[0] : num[1];
+    max = (num[0]>num[1])? num[0] : num[1];
     max = (max > num[2])? max : num[2];
 
     return max;
@@ -67,6 +68,12 @@ public:
     return max2;
   }
 
+  // getter function of max
+  float getMax()
+  {
+    return max; 
+  }
+
 };
 
 // driver code
@@ -80,7 +87,7 @@ int main()
   system("cls");
   cout<< "Three numbers are : ";
   cout<< num<< endl;
-  cout<< " Greatest Number = "<< num.Max()<< endl;
+  cout<< " Greatest Number = "<< num.MaxNum()<< " or = "<< num.getMax()<< endl;
   cout<< " Second greatest number = "<< num.Max2()<< endl;
 
   return 0;

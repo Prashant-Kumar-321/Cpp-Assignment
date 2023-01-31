@@ -5,14 +5,17 @@ using namespace std;
 class square
 {
   int x;
+  unsigned Sqr; 
 public:
   square(int a)
   {
     x = a;
+    Sqr = x*x; 
   }
   square()
   {
     x = 1;
+    Sqr = x*x; 
   }
 
   int display()
@@ -20,17 +23,16 @@ public:
     return x;
   }
 
-  unsigned long squ()
+  // getter function for sqr member variable 
+  unsigned getSqr()
   {
-    static int Count = 0;
-    Count++;
-
-    return (x*x);
+    return Sqr; 
   }
 
   friend istream& take(istream &is, square &s)
   {
     cin>>s.x ;
+    s.Sqr = s.x*s.x; 
     return is;
   }
 
@@ -44,14 +46,14 @@ int main()
 
   cout<< "Enter a Number ";
   take(cin, n2);
-  cout<< "square of "<< n2.display()<< " is "<< n2.squ()<< endl ;
+  cout<< "square of "<< n2.display()<< " is "<< n2.getSqr()<< endl ;
 
   cout<< n1.display()<< endl;
-  unsigned int x = n1.squ();
-  cout<< "square = "<< x<< endl;
+  cout<< "square = "<< n1.getSqr() << endl;
 
+ cout<< "Three Numbers and their squares :\n"; 
   for(int i=0; i<3; i++)
-     cout<< n[i].display()<< " " ;
+     cout<< n[i].display()<< "^2 = "<<n[i].getSqr()<< endl;
 
 
   return 0;

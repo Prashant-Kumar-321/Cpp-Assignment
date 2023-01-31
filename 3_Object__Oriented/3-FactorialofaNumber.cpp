@@ -10,16 +10,16 @@ using namespace std;
 
 class Factorial
 {
-public:
-  int x;
+  unsigned long long fact; 
 
+  public:
+  int x;
   Factorial(int a = 1) //default argument constructor
   {
     x = a;
   }
-
-  ////////////////////Instance Member function /////////////////////////
-  unsigned long long fact(int b)
+  ////////////...... Instance Member function.... /////////////////////////
+  unsigned long long Fact(int b)
   {
    if(b == 1 || b== 0)
     return 1;
@@ -27,10 +27,10 @@ public:
    else if (b < 0)
     return 0;
 
-   return b * fact(b-1);
+   return b * Fact(b-1);
   }
 
-  unsigned long long fact( )
+  unsigned long long Fact()
   {
     int i;
 
@@ -38,7 +38,12 @@ public:
     for(i=1; i<=x; i++) // calculating factorial of x
       fact *= i;
 
+    this -> fact = fact; 
     return fact;
+  }
+  unsigned long long getFact()
+  {
+    return fact; 
   }
 };
 
@@ -49,12 +54,14 @@ int main()
   cin>> num;
 
   Factorial f2;
-  cout<< "factorial = "<< f2.fact(num)<< endl;
+  cout<< "factorial = "<< f2.Fact(num)<< endl;
 
   cout<< "Enter a Number : ";
   cin>> f2.x;
+  
+  f2.Fact(); 
 
-  cout<< f2.x<< "! = "<< f2.fact()<< endl;
+  cout<< f2.x<< "! = "<< f2.getFact()<< endl;
 
 
 

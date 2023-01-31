@@ -32,7 +32,7 @@ public:
         cout<< "Enter complex Number : \n";
         cout<< "Real part : ";
         cin>> real;
-        cout<< "Imaginary part without 'i' : ";
+        cout<< "Imaginary part : ";
         cin>> img;
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
