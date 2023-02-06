@@ -15,10 +15,10 @@ namespace pkg
       real = r;
       img = im;
      }
-     Complex()
-     { // default constructor
+     Complex()// default constructor
+     { 
       real = 0;
-      img = 0;
+      img  = 0;
      }
 
      // friend function  to take input and print output of complex object
@@ -40,7 +40,7 @@ namespace pkg
 
 using namespace pkg;
 
-// Definitio of friend function to take input and display complex wich is part of pkg namespace 
+// Definitio of friend function to take input and display complex which is part of pkg namespace 
 istream& pkg::operator>>(istream &cin, Complex &c) // function of pkg namespce 
 {
   cin >> c.real >> c.img;
@@ -84,10 +84,9 @@ bool  Complex::operator==(Complex c)
   // if real(z1) == real(z2) AND img(z1) == img(z2)
   //  z1 == z2
   return ((img == c.img) && (real == c.real)) ? 1 : 0;
-  // ((img == c.img) && (real == c.real)) ? return 1 : return 0 ;
+  // ((img == c.img) && (real == c.real)) ? return 1 : return 0 ; Error 
 }
 
-using namespace pkg; 
 // Driver code
 int main(void)
 {

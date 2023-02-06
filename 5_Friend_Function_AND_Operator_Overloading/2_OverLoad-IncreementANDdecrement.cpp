@@ -6,8 +6,7 @@ class ABC
 {
   public: 
     int x; 
-   
-   ABC(int a = 0)
+   ABC(int a = 0) // default + parametrized constrctor 
    { 
     x = a; 
    }
@@ -22,7 +21,7 @@ class ABC
   ABC operator++(int)
   {
     ABC tem = *this; // created an temporay object and intialized with invoke object value ; 
-    ++x; // increase the value of invoked object by one 
+    x++; // increase the value of invoked object by one 
 
     return tem; 
   }

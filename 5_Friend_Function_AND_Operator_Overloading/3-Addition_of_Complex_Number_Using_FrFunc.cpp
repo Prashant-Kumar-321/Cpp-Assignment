@@ -29,7 +29,8 @@ class Complex
 
         return cout; 
       }
-
+      
+      // function overloading of operator+ using friend function 
       // friend function to add two complex number 
       friend Complex operator+(Complex c1, Complex c2)
       {
