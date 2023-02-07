@@ -16,9 +16,14 @@ namespace string
       strcpy(str, s);
     }
     // copy costructor
-    Mystring(const Mystring &s)
+    /** **********************************************************
+      Don't need this one because
+      default copy constructor will copy values of arry1 to arry2
+      that's what we need   
+    ***************************************************************/
+    Mystring(const Mystring &s) 
     {
-      strcpy(str, s.str);
+      // strcpy(str, s.str); 
     }
 
     void takeStr()
@@ -29,7 +34,10 @@ namespace string
     {
       cout << str;
     }
-
+    void changeStr(const char *s) //update string 
+    {
+      strcpy(str,s); 
+    }
     // operator '!' overloading to reverse the case of Alphabet of string
     Mystring operator!()
     {
@@ -85,18 +93,23 @@ int main(void)
   cout << "After reversing the case \nString : ";
   string1.getStr();
   cout << endl;
+  
+  string2.getStr(); cout<< endl; 
+  string2.changeStr("Prashant"); 
 
-  // convert string's Alphabets into Upper case
-  cout << "String : Uppercase : ";
-  +string2;
-  string2.getStr();
-  cout << endl;
+  string1.getStr(); cout<< endl; 
+  string2.getStr(); cout<< endl; 
+  // // convert string's Alphabets into Upper case
+  // cout << "String : Uppercase : ";
+  // +string2;
+  // string2.getStr();
+  // cout << endl;
 
-  // converting into lower case
-  cout << "String : Lowercase : ";
-  -string2;
-  string2.getStr();
-  cout << endl;
+  // // converting into lower case
+  // cout << "String : Lowercase : ";
+  // -string2;
+  // string2.getStr();
+  // cout << endl;
 
   return 0;
 }

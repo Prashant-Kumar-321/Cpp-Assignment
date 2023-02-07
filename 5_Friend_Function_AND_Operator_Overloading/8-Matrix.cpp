@@ -5,7 +5,7 @@ using namespace std;
 
 class Matrix
 {
-  int mat[3][3] = {{1, 4, -2},
+  int mat[3][3] = {{1, 4, -2},  // default matrix; 
                    {9, 0, 19},
                    {-2, 8, 10}};
   static int count;
@@ -72,7 +72,7 @@ int Matrix::count = 0; // v.v imp // shared memory among objects of Matrix class
 int main(void)
 {
   Matrix m1;
-  cout << "Matrix : " << endl;
+  cout << "Matrix m1 : " << endl;
   cout << m1 << endl;
 
   cin >> m1; // input taking in m1 object
@@ -84,6 +84,16 @@ int main(void)
   -m1;
   cout << "Matrix -M : " << endl;
   cout << m1 << endl;
+
+
+  Matrix m2 = m1; // default copy constructor will handle everything; 
+  cout<< "Matrix m2 : "<< endl;  
+  cout<< m2<< endl;
+  cin>>m2; 
+
+  cout<< "matrix m1: \n"<< m1<< endl; 
+  cout<< "matrix m2: \n"<< m2<< endl; 
+  
 
   getch();
   return 0;
